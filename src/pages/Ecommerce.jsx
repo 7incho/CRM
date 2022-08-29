@@ -1,9 +1,9 @@
-import React from 'react';
-import { BsCurrencyDollar } from 'react-icons/bs';
-import { GoPrimitiveDot } from 'react-icons/go';
-import {Stacked, Pie, Button, SparkLine} from '../components';
-import {earningData, SparklineAreaData, ecomPieChartDat} from '../data/dummy';
-import { useStateContext } from '../contexts/ContextProvider';
+import React from "react";
+import { BsCurrencyDollar } from "react-icons/bs";
+import { GoPrimitiveDot } from "react-icons/go";
+import { Stacked, Pie, Button, SparkLine } from "../components";
+import { earningData, SparklineAreaData, ecomPieChartDat } from "../data/dummy";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const Ecommerce = () => {
   return (
@@ -18,11 +18,11 @@ const Ecommerce = () => {
           </div>
           <div>
             <Button
-            color="white"
-            bgColor="blue"
-            text="Download"
-            borderRadius="10px"
-            size="md"
+              color="white"
+              bgColor="blue"
+              text="Descargar"
+              borderRadius="10px"
+              size="md"
             />
           </div>
         </div>
@@ -30,15 +30,18 @@ const Ecommerce = () => {
         <div className="flex m-3 flex-wrap justify-center gap-1 items-center">
           {earningData.map((item) => (
             <div
-            key={item.title} className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-45 p-4 pt-9 rounded-2xl"
+              key={item.title}
+              className="bg-white dark:text-gray-200 dark:bg-secondary-dark-bg md:w-45 p-4 pt-9 rounded-2xl"
             >
-              <button type="button" style={{color: item.iconColor, backgroundColor: item.iconBg}} className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl">
+              <button
+                type="button"
+                style={{ color: item.iconColor, backgroundColor: item.iconBg }}
+                className="text-2xl opacity-0.9 rounded-full p-4 hover:drop-shadow-xl"
+              >
                 {item.icon}
               </button>
               <p className="mt-3">
-                <span className="text-lg font-semibold">
-                  {item.amount}
-                </span>
+                <span className="text-lg font-semibold">{item.amount}</span>
                 <span className={`text-sm text-${item.pcColor} ml-2`}>
                   {item.percentage}
                 </span>
@@ -51,15 +54,19 @@ const Ecommerce = () => {
       <div className="flex gap-10 flex-wrap justify-center">
         <div className="bg-white dark:text-gray-200 dark:bg-secondary-bg m-3 p-4 rounded-2xl md:w-780">
           <div className="flex justify-between">
-            <p className="font-smibold text-xl">Revenue Updates</p>
+            <p className="font-smibold text-xl">Actualizaciones de ingresos</p>
             <div className="flex items-center gap-4">
               <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
-                <span><goPrimitiveDot/></span>
-                <span>Expense</span>
+                <span>
+                  <goPrimitiveDot />
+                </span>
+                <span>Gastos</span>
               </p>
               <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
-                <span><goPrimitiveDot/></span>
-                <span>Budget</span>
+                <span>
+                  <goPrimitiveDot />
+                </span>
+                <span>Presupuesto</span>
               </p>
             </div>
           </div>
@@ -68,27 +75,28 @@ const Ecommerce = () => {
               <div>
                 <p>
                   <span className="text-3xl font-semibold">$93,438</span>
-                  <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">23%</span>
+                  <span className="p-1.5 hover:drop-shadow-xl cursor-pointer rounded-full text-white bg-green-400 ml-3 text-xs">
+                    23%
+                  </span>
                 </p>
-                <p className="text-gray-500 mt-1">Budget</p>
+                <p className="text-gray-500 mt-1">Presupuesto</p>
               </div>
               <div>
                 <p>
                   <span className="text-3xl font-semibold">$48,438</span>
                 </p>
-                <p className="text-gray-500 mt-1">Expense</p>
+                <p className="text-gray-500 mt-1">Gastos</p>
               </div>
-              
+
               <div className="mt-5">
-                <SparkLine
-                />
+                <SparkLine />
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Ecommerce
+export default Ecommerce;
