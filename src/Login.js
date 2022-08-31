@@ -10,8 +10,7 @@ import App from './App.js';
 const Login = () => {
     const {isAuthenticated} = useAuth0();
     return (
-      <div className='App'>
-        <h1>Aplication</h1>
+      <div className='App' >
         {isAuthenticated ?  <App /> : <LoginButton /> }
         
       </div>
