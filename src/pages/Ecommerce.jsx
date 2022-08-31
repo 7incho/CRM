@@ -13,7 +13,7 @@ const Ecommerce = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Ganancias</p>
-              <p className="text-2xl">$$50000</p>
+              <p className="text-2xl">$50000</p>
             </div>
           </div>
           <div>
@@ -58,13 +58,13 @@ const Ecommerce = () => {
             <div className="flex items-center gap-4">
               <p className="flex items-center gap-2 text-gray-600 hover:drop-shadow-xl">
                 <span>
-                  <goPrimitiveDot />
+                  <GoPrimitiveDot />
                 </span>
                 <span>Gastos</span>
               </p>
               <p className="flex items-center gap-2 text-green-400 hover:drop-shadow-xl">
                 <span>
-                  <goPrimitiveDot />
+                  <GoPrimitiveDot />
                 </span>
                 <span>Presupuesto</span>
               </p>
@@ -99,7 +99,18 @@ const Ecommerce = () => {
                   color="blue"
                 />
               </div>
-
+              <div className="mt-10">
+                <Button
+                  color="white"
+                  bgColor="blue"
+                  text="Descargar Reporte"
+                  borderRadius="10px"
+                />
+              </div>
+            </div>
+            <div>
+              <Stacked width="320px" height="360px"
+              />
             </div>
           </div>
         </div>

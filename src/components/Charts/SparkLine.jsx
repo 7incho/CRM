@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { SparklineComponent, Inject, SparklineTooltip } from '@syncfusion/ej2-react-charts';
-import { Line } from '@syncfusion/ej2/circulargauge';
+// import { Line } from '@syncfusion/ej2/circulargauge';
 
-const SparkLine = ({ id, height, width, color, data, type, currentColor }) => {
+const SparkLine = ({ currentColor, id, type, height, width, data, color }) => {
   return (
     <SparklineComponent
       id={id}
@@ -14,15 +14,16 @@ const SparkLine = ({ id, height, width, color, data, type, currentColor }) => {
       border={{ color: currentColor, width: 2 }}
       dataSource={data}
       xName="x"
-      yName="y"
+      yName="yval"
       type={type}
       tooltipSettings={{
         visible: true,
-        format: '${x} : data ${y}',
+        format: '${x} : data ${yval}',
         trackLineSettings: {
-          visible: true
-        }
+          visible: true,
+        },
       }}
+      markerSettings={{ visible: ['All'], size: 2.5, fill: currentColor }}
       >
       <Inject services={[SparklineTooltip]} />
     </SparklineComponent>

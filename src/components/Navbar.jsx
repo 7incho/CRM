@@ -60,14 +60,14 @@ const Navbar = () => {
           icon={<BsChatLeft/>}
         />
         <NavButton
-            title="Notifications"
+            title="Notificaciones"
             dotColor="#03C9D7"
             customFunc={() => handleClick('notification')}
             color="blue"
             icon={<RiNotification3Line/>}
         />
         <TooltipComponent
-          content="Profile"
+          content="Perfil"
           position="BottomCenter"
           >
             <div className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg'
