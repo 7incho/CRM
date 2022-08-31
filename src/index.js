@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 import Login from './Login';
+import './Login.css'
 import {ContextProvider} from './contexts/ContextProvider';
 import { Auth0Provider } from '@auth0/auth0-react';
 

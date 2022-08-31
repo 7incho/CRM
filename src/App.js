@@ -9,6 +9,7 @@ import { Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Ka
 import { useStateContext } from './contexts/ContextProvider';
 
 import './App.css';
+import LogoutButton from './components/LogoutButton';
 
 const App = () => {
   const {activeMenu} = useStateContext();
@@ -37,6 +38,9 @@ const App = () => {
           }>
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
               <Navbar/>
+            </div>
+            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
+              <LogoutButton/>
             </div>
           
           <div>
