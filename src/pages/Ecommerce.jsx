@@ -13,7 +13,7 @@ const Ecommerce = () => {
           <div className="flex justify-between items-center">
             <div>
               <p className="font-bold text-gray-400">Ganancias</p>
-              <p className="text-2xl">$50000</p>
+              <p className="text-2xl">$$50000</p>
             </div>
           </div>
           <div>
@@ -81,7 +81,7 @@ const Ecommerce = () => {
                 </p>
                 <p className="text-gray-500 mt-1">Presupuesto</p>
               </div>
-              <div>
+              <div className="mt-8">
                 <p>
                   <span className="text-3xl font-semibold">$48,438</span>
                 </p>
@@ -89,8 +89,17 @@ const Ecommerce = () => {
               </div>
 
               <div className="mt-5">
-                <SparkLine />
+                <SparkLine 
+                  currentColor="blue"
+                  id="line-sparkline"
+                  type="Line"
+                  height="80px"
+                  width="250px"
+                  data={SparklineAreaData}
+                  color="blue"
+                />
               </div>
+
             </div>
           </div>
         </div>
