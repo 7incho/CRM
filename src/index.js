@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './index.css';
-import App from './App';
+import Login from './Login';
 import {ContextProvider} from './contexts/ContextProvider';
 import { Auth0Provider } from '@auth0/auth0-react';
 
@@ -18,7 +18,7 @@ ReactDOM.render(
         clientId={clientId} 
         redirectUri={window.location.origin} 
         >
-            <App />
+            <Login />
         </Auth0Provider>
     
     </ContextProvider>, document.getElementById('root')
