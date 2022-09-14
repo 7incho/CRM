@@ -481,7 +481,7 @@ export const links = [
   },
 
   {
-    title: 'Pages',
+    title: 'Páginas',
     links: [
       {
         name: 'orders',
@@ -499,7 +499,7 @@ export const links = [
   },
   
   {
-    title: 'Charts',
+    title: 'Gráficos',
     links: [
       {
         name: 'line',
@@ -852,7 +852,7 @@ export const userProfileData = [
 
 export const ordersGrid = [
   {
-    headerText: 'Image',
+    headerText: 'Imagen',
     template: gridOrderImage,
     textAlign: 'Center',
     width: '120',
@@ -865,20 +865,20 @@ export const ordersGrid = [
     textAlign: 'Center',
   },
   { field: 'CustomerName',
-    headerText: 'Customer Name',
+    headerText: 'Nombre del Cliente',
     width: '150',
     textAlign: 'Center',
   },
   {
     field: 'TotalAmount',
-    headerText: 'Total Amount',
+    headerText: 'Monto Total',
     format: 'C2',
     textAlign: 'Center',
     editType: 'numericedit',
     width: '150',
   },
   {
-    headerText: 'Status',
+    headerText: 'Estado',
     template: gridOrderStatus,
     field: 'OrderItems',
     textAlign: 'Center',
@@ -886,14 +886,14 @@ export const ordersGrid = [
   },
   {
     field: 'OrderID',
-    headerText: 'Order ID',
+    headerText: 'ID de la Orden',
     width: '120',
     textAlign: 'Center',
   },
 
   {
     field: 'Location',
-    headerText: 'Location',
+    headerText: 'Lugar',
     width: '150',
     textAlign: 'Center',
   },
