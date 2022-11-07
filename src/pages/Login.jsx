@@ -6,6 +6,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    client.auth.sing;
     try {
       const result = await client.auth.signIn({
         email,
@@ -18,12 +19,11 @@ const Login = () => {
 
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <input
-          onSubmit={handleSubmit}
           type="email"
           name="email"
-          placeholder="youremail@site.com"
+          placeholder="your.email@site.com"
           onChange={(e) => setEmail(e.target.value)}
         />
         <button>Send</button>
