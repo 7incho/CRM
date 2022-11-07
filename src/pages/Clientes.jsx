@@ -3,7 +3,7 @@ import {GridComponent, ColumnsDirective, ColumnDirective, Page, Selection, Injec
 import { customersData, customersGrid } from '../data/dummy'
 import { Header } from '../components';
 
-const Customers = () => {
+const Clientes = () => {
   return (
     <div className='m-2 md:m-10 p-2 md:p-10 bg-white rounded-3xl'>
       <Header category="Página" title="Clientes"></Header>
@@ -26,4 +26,4 @@ const Customers = () => {
   )
 }
 
-export default Customers
+export default Clientes
