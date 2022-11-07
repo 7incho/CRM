@@ -6,9 +6,8 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    client.auth.sing;
     try {
-      const result = await client.auth.signIn({
+      const result = await client.auth.signInWithOtp({
         email,
       });
       console.log(result);
