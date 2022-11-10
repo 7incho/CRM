@@ -1,4 +1,6 @@
 import React from "react";
+import { BrowserRouter } from "react-router-dom";
+
 import ReactDOM from "react-dom";
 
 import "./index.css";
@@ -7,9 +9,11 @@ import { ContextProvider } from "./contexts/ContextProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ContextProvider>
-      <App />
-    </ContextProvider>
+    <BrowserRouter>
+      <ContextProvider>
+        <App />
+      </ContextProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );

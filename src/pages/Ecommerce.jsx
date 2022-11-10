@@ -1,11 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { GoPrimitiveDot } from "react-icons/go";
 import { Stacked, Pie, Button, SparkLine } from "../components";
 import { earningData, SparklineAreaData, ecomPieChartDat } from "../data/dummy";
 import { useStateContext } from "../contexts/ContextProvider";
+import { supabase } from "../supabase/client";
+import { useNavigate } from "react-router-dom";
 
 const Ecommerce = () => {
+  const navigate = useNavigate();
+
+  const handlerUser = async () => {
+    try {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (!user) {
+        navigate("/login");
+        console.log("a");
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    handlerUser();
+  }, [navigate]);
+
   return (
     <div className="mt-12">
       <div className="flex flex-wrap lg:flex-nowrap justify-center">
