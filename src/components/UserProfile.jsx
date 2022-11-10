@@ -1,5 +1,6 @@
 import React from "react";
 import { MdOutlineCancel } from "react-icons/md";
+import { supabase } from "../supabase/client";
 
 import { Button } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
