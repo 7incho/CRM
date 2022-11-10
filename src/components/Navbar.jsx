@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
-import { AiOutlineMenu } from 'react-icons/ai';
-import { BsChatLeft } from 'react-icons/bs';
-import { RiNotification3Line, RiWindowLine } from 'react-icons/ri';
-import { MdKeyboardArrowDown } from 'react-icons/md';
-import { TooltipComponent } from '@syncfusion/ej2-react-popups';
+import React, { useEffect } from "react";
+import { AiOutlineMenu } from "react-icons/ai";
+import { BsChatLeft } from "react-icons/bs";
+import { RiNotification3Line, RiWindowLine } from "react-icons/ri";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
-import avatar from '../data/avatar.jpg';
-import { UserProfile } from '.';
-import { useStateContext } from '../contexts/ContextProvider';
+import avatar from "../data/avatar.jpg";
+import { UserProfile } from ".";
+import { useStateContext } from "../contexts/ContextProvider";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
@@ -27,50 +27,73 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
 );
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor} = useStateContext();
-
-  useEffect(()=>{
-    const handleResize = () => setScreenSize(window.innerWidth);
-    window.addEventListener('resize',handleResize);
-    handleResize();
-    
-    return () => window.removeEventListener('resize', handleResize);
-  },[]);
+  const {
+    activeMenu,
+    setActiveMenu,
+    isClicked,
+    setIsClicked,
+    handleClick,
+    screenSize,
+    setScreenSize,
+    currentColor,
+  } = useStateContext();
 
   useEffect(() => {
-    if(screenSize <= 900){
+    const handleResize = () => setScreenSize(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => setScreenSize(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (screenSize <= 900) {
       setActiveMenu(false);
     } else {
       setActiveMenu(true);
     }
-  },[screenSize]);
+  }, [screenSize]);
 
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
-      <NavButton title="Menu" customFunc={()=> setActiveMenu((prevActiveMenu)=>!prevActiveMenu)} color={currentColor} icon={<AiOutlineMenu/>}/>
-      
+      <NavButton
+        title="Menu"
+        customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)}
+        color={currentColor}
+        icon={<AiOutlineMenu />}
+      />
+
       <div className="flex">
-      
-        <TooltipComponent
-          content="Perfil"
-          position="BottomCenter"
+        <TooltipComponent content="Perfil" position="BottomCenter">
+          <div
+            className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg"
+            onClick={() => handleClick("userProfile")}
           >
-            <div className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg'
-            onClick={() => handleClick('userProfile')}>
-              <img src={avatar} className='rounded-full w-8 h-8' alt='userProfile'/>
-              <p>
-                <span className="text-gray-400 text-14">Hola, </span>{' '}
-                <span className="text-gray-400 font-bold ml-1 text-14">Ale</span>
-              </p>
-              <MdKeyboardArrowDown
-              className="text-gray-400 text-14" />
-            </div>
+            <img
+              src={avatar}
+              className="rounded-full w-8 h-8"
+              alt="userProfile"
+            />
+            <p>
+              <span className="text-gray-400 text-14">Hola, </span>{" "}
+              <span className="text-gray-400 font-bold ml-1 text-14">Ale</span>
+            </p>
+            <MdKeyboardArrowDown className="text-gray-400 text-14" />
+          </div>
         </TooltipComponent>
 
-        {isClicked.userProfile && <UserProfile/>}
+        {isClicked.userProfile && <UserProfile />}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

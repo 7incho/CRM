@@ -1,9 +1,9 @@
-import React from 'react';
-import { MdOutlineCancel } from 'react-icons/md';
+import React from "react";
+import { MdOutlineCancel } from "react-icons/md";
 
-import { Button } from '.';
-import { useStateContext } from '../contexts/ContextProvider';
-import avatar from '../data/avatar.jpg';
+import { Button } from ".";
+import { useStateContext } from "../contexts/ContextProvider";
+import avatar from "../data/avatar.jpg";
 
 const UserProfile = () => {
   const { currentColor } = useStateContext();
@@ -11,7 +11,9 @@ const UserProfile = () => {
   return (
     <div className="nav-item absolute right-1 top-16 bg-white dark:bg-[#42464D] p-8 rounded-lg w-96">
       <div className="flex justify-between items-center">
-        <p className="font-semibold text-lg dark:text-gray-200">Perfil de usuario</p>
+        <p className="font-semibold text-lg dark:text-gray-200">
+          Perfil de usuario
+        </p>
         <Button
           icon={<MdOutlineCancel />}
           color="rgb(153, 171, 180)"
@@ -27,22 +29,29 @@ const UserProfile = () => {
           alt="user-profile"
         />
         <div>
-          <p className="font-semibold text-xl dark:text-gray-200"> Alexis Bustos </p>
-          <p className="text-gray-500 text-sm dark:text-gray-400">  Administrador   </p>
-          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400"> contact@binary.com </p>
+          <p className="font-semibold text-xl dark:text-gray-200">
+            {" "}
+            Alexis Bustos{" "}
+          </p>
+          <p className="text-gray-500 text-sm dark:text-gray-400">
+            {" "}
+            Administrador{" "}
+          </p>
+          <p className="text-gray-500 text-sm font-semibold dark:text-gray-400">
+            {" "}
+            contact@binary.com{" "}
+          </p>
         </div>
       </div>
       <div className="mt-5">
-        <Button
-          color="white"
-          bgColor={currentColor}
-          text="Cerrar sesión"
-          borderRadius="10px"
-          width="full"
-        />
+        <button
+          onClick={() => supabase.auth.signOut()}
+          class="inline-block p-3 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded-full shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out mx-1"
+        >
+          LogOut
+        </button>
       </div>
     </div>
-
   );
 };
 
