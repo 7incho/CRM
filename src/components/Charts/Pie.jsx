@@ -11,13 +11,13 @@ const Doughnut = ({ id, data, legendVisiblity, height }) => {
       id={id}
       legendSettings={{ visible: legendVisiblity, background: 'white' }}
       height={height}
-      background={currentMode === 'Dark' ? '#33373E' : '#fff'}
+      background={currentMode === 'Dark' ? '#33373E' : '#ffffff'}
       tooltip={{ enable: true }}
     >
       <Inject services={[AccumulationLegend, PieSeries, AccumulationDataLabel, AccumulationTooltip]} />
       <AccumulationSeriesCollectionDirective>
         <AccumulationSeriesDirective
-          name="Sale"
+          name="Beneficios"
           dataSource={data}
           xName="x"
           yName="y"
@@ -34,7 +34,7 @@ const Doughnut = ({ id, data, legendVisiblity, height }) => {
             position: 'Inside',
             font: {
               fontWeight: '600',
-              color: '#fff',
+              color: '#ffffff',
             },
           }}
         />

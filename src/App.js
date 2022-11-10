@@ -11,7 +11,7 @@ import { useStateContext } from './contexts/ContextProvider';
 import './App.css';
 
 const App = () => {
-  const { setCurrentColor, setCurrentMode, currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
+  const { currentMode, activeMenu, currentColor, themeSettings, setThemeSettings } = useStateContext();
   
   useEffect(() => {
     const currentThemeColor = localStorage.getItem('colorMode');
