@@ -2,7 +2,7 @@ import React from 'react'
 
 import {Header, LineChart } from '../../components'
 
-const Line = () => {
+const Lineal = () => {
   return (
     <div className='m-4 md:m-10 mt-24 p-10 bg-white dark:bg-secondary-dark-bg rounded-3xl'>
       <Header category="Gráfico" title="Ratio de Inflación"/>
@@ -13,4 +13,4 @@ const Line = () => {
   )
 }
 
-export default Line
+export default Lineal

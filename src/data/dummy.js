@@ -498,7 +498,7 @@ export const links = [
     title: 'Gráficos',
     links: [
       {
-        name: 'line',
+        name: 'lineal',
         icon: <AiOutlineStock />,
       },
       {
@@ -507,27 +507,27 @@ export const links = [
       },
 
       {
-        name: 'bar',
+        name: 'barra',
         icon: <AiOutlineBarChart />,
       },
       {
-        name: 'pie',
+        name: 'torta',
         icon: <FiPieChart />,
       },
       {
-        name: 'financial',
+        name: 'financiero',
         icon: <RiStockLine />,
       },
       {
-        name: 'color-mapping',
+        name: 'mapa-de-colores',
         icon: <BsBarChart />,
       },
       {
-        name: 'pyramid',
+        name: 'piramidal',
         icon: <GiLouvrePyramid />,
       },
       {
-        name: 'stacked',
+        name: 'barras-apiladas',
         icon: <AiOutlineBarChart />,
       },
     ],

@@ -5,7 +5,7 @@ import { PyramidData } from '../../data/dummy';
 //import { useStateContext } from '../../contexts/ContextProvider';
 import { ChartsHeader } from '../../components';
 
-const Pyramid = () => {
+const Piramidal = () => {
   //const { currentMode } = useStateContext();
 
   return (
@@ -45,4 +45,4 @@ const Pyramid = () => {
   );
 };
 
-export default Pyramid;
+export default Piramidal;
