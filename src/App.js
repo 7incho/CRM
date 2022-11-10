@@ -28,7 +28,7 @@ const App = () => {
       <div className='flex relative dark:bg-main-dark-bg'>
         <div className='fixed right-4 bottom-4' style={{ zIndex: '1000'} }>
           <TooltipComponent content="Configuraciones" position="Top">
-            <button type="button" className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white" onClick={() => setThemeSettings(true)} style={{ backgroundColor: 'blue', borderRadius: '50%' }}>
+            <button type="button" className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white" onClick={() => setThemeSettings(true)} style={{ backgroundColor: currentColor, borderRadius: '50%' }}>
                 <FiSettings/>
               </button>
           </TooltipComponent>
@@ -43,9 +43,13 @@ const App = () => {
               </div>
             )
           }
-          <div className={
-            `dark:bg-main-bg bg-main-bg min-h-screen w-full ${activeMenu ? 'md:ml-72' : 'flex-2'}`
-          }>
+          <div
+            className={
+              activeMenu
+                ? 'dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  '
+                : 'bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 '
+            }
+          >
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
               <Navbar/>
             </div>
